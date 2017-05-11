@@ -46,6 +46,8 @@ exports.deleteIngredients = (req, res) => {
 };
 
 exports.apiIngredients = (req, res) => {
-	Ingredient.findOne({ _id: req.params.id })
-       res.json(Ingredient)
+	Ingredient.findOne({_id: req.params.id}) 
+    .then(ingredient => {
+      res.json(ingredient)
+    });
 };
